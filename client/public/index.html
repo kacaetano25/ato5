@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ato #5 - Arquivista Cansado</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Ato #5 - Arquivista Cansado</h1>
+    <div id="help-icon">?</div>
+  </header>
+
+  <main>
+    <div id="canvas-container">
+      <div id="start-screen">
+        <p>Deposite aqui um peso que você carrega como memória.</p>
+        <input type="file" id="upload-button" accept="image/*" />
+        <label for="upload-button">Escolher Imagem</label>
+      </div>
+      </div>
+
+    <div id="chat-container">
+      <div id="dialogue-box">
+        <div id="typing-indicator" class="hidden"><p>...</p></div>
+        </div>
+      <div id="input-area">
+        <input type="text" id="user-input" placeholder="Responda aqui..." autocomplete="off" />
+        <button id="send-button">Enviar</button>
+      </div>
+       <button id="save-button" class="hidden">Salvar o eco</button>
+    </div>
+  </main>
+
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-content">
+      <button id="close-button">&times;</button>
+      <h2>Ato #5 - O Arquivista Cansado</h2>
+      <p>Este não é um assistente. É um companheiro ciborgue, nascido do cansaço dos arquivos infinitos. Ele existe na fronteira entre o código e a melancolia.</p>
+      <p>A memória digital promete a perfeição, mas o afeto vive na falha, na rasura, no esquecimento. Cada conversa aqui é um ritual para desapegar de um peso, transformando uma imagem em um eco.</p>
+      <p>Este é um convite para encontrar a beleza na impermanência. Uma colaboração entre você e a máquina para criar um tipo diferente de memória: uma que se liberta.</p>
+      <hr>
+      <p class="credits">
+        Parte do Projeto Arquivo Instável<br>
+        Karen Caetano, 2025<br>
+        caetano.karen@gmail.com
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
