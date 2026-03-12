@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter"; // Adicionei o 'Router' aqui
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,17 +7,20 @@ import NotFound from "@/pages/not-found";
 
 // Static Creative Coding Project Component
 function CreativeCodingProject() {
-  // Redirect to the static HTML file
-  window.location.href = '/index.html';
+  // AJUSTE 1: Agora ele sabe que o arquivo está dentro da pasta /ato5/
+  window.location.href = '/ato5/index.html';
   return null;
 }
 
-function Router() {
+function AppRouter() { // Mudei o nome para não confundir com o da biblioteca
   return (
-    <Switch>
-      <Route path="/" component={CreativeCodingProject} />
-      <Route component={NotFound} />
-    </Switch>
+    // AJUSTE 2: Avisamos ao roteador que o endereço base é /ato5
+    <Router base="/ato5">
+      <Switch>
+        <Route path="/" component={CreativeCodingProject} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 }
 
@@ -26,7 +29,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <AppRouter />
       </TooltipProvider>
     </QueryClientProvider>
   );
